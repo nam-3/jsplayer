@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test{
+            width: 400px;
+            height: 200px;
+            background-color: #ddd;
+        }
+        /* * {
+            margin:0;
+            padding:0;
+        }
+        .box {
+            width:100px;
+            height:100px;
+            background-color: #f00;
+        }
+        .test {
+            width:100%;
+            height:500px;
+            border:1px solid #555;
+            background-color: #aaa;
+
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        } */
+    </style>
+</head>
+<body>
+    <div class="test">
+        <!-- <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">1</div> -->
+    </div>
+    <script>
+        let test = document.querySelector(".test");
+        test.addEventListener("drop",(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(e);
+        });
+
+        test.addEventListener("dragover",(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <ul>
+            <li v-for="h in hlist">
+                {{h.name}}
+                <button @click="del(h.idx)">삭제</button></li>
+        </ul>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el:"#app",
+            methods:{
+                del(idx){
+                    let id = this.hlist.findIndex(x=> x.idx == idx);
+                    this.hlist.splice(id, 1);
+                }
+            },
+            data:{
+                hlist:[
+                    {idx:1, name:"남소현"},
+                    {idx:2, name:"남아무개"},
+                    {idx:3, name:"남길동"},
+                    {idx:4, name:"남수환무두루미와거북이삼천갑자동방삭"},
+                    {idx:5, name:"남씨"},
+                ],
+                msg:"안녕하세요 Vue.js"
+            }
+        })
+    </script>
+</body>
+</html>
